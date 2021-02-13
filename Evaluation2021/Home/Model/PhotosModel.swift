@@ -9,6 +9,7 @@
 import Foundation
 
 struct PhotosModel: Decodable {
+    
     let localized_name: String
     let img: String
 }

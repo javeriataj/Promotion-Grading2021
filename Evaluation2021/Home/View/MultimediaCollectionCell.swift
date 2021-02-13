@@ -12,18 +12,12 @@ import UIKit
 class MultimediaCollectionCell : UICollectionViewCell {
     
     @IBOutlet weak var VideoPhotoImage: UIImageView!
-    
     @IBOutlet weak var favouriteButton: UIButton!
-    
-   
     @IBOutlet weak var profileImageButton: UIButton!
-    
     @IBOutlet weak var profileName: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
    
     @IBAction func didTapFavourite(_ sender: Any) {
         favouriteButton.isSelected = !favouriteButton.isSelected

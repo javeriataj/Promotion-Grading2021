@@ -16,12 +16,15 @@ class PhotoDetailViewController : NavigationBaseViewController {
     @IBOutlet weak var profilePic: UIButton!
     @IBOutlet weak var zoomOutButton: UIButton!
     @IBOutlet weak var zoomInButton: UIButton!
-    var photoName = ""
     @IBOutlet weak var detailImmage: UIImageView!
+    
+    var photoName = ""
+    var imageLink = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         profileName.text = photoName
+        detailImmage.downloaded(from: imageLink)
     }
     
     

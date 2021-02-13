@@ -16,6 +16,7 @@ class HomeViewController: NavigationBaseViewController   {
     var nameArray = [String]()
     var searchPhotos = [String]()
     var searching = false
+    var imageLink = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mutiMediaCollectionView: UICollectionView!
@@ -28,22 +29,23 @@ class HomeViewController: NavigationBaseViewController   {
         registerCell()
         getPhotoDetails()
     }
+    
     func getPhotoDetails(){
         let url = URL(string: "https://api.opendota.com/api/heroStats")
-            URLSession.shared.dataTask(with: url!){ (data, response, error) in
-                if error == nil{
-                    do {
-                        self.photos = try JSONDecoder().decode([PhotosModel].self, from: data!)
-                    }catch {
-                        print("Parsin error")
-                    }
-                    DispatchQueue.main.async {
-                        self.mutiMediaCollectionView.reloadData()
-                    }
+        URLSession.shared.dataTask(with: url!){ (data, response, error) in
+            if error == nil{
+                do {
+                    self.photos = try JSONDecoder().decode([PhotosModel].self, from: data!)
+                }catch {
+                    print("Parsin error")
                 }
-            }.resume()
-    
+                DispatchQueue.main.async {
+                    self.mutiMediaCollectionView.reloadData()
+                }
+            }
+        }.resume()
     }
+    
     func registerCell(){
         let nib = UINib(nibName: "MultimediaCollectionCell", bundle: nil)
         mutiMediaCollectionView.register(nib, forCellWithReuseIdentifier: "MultimediaCollectionCell")
@@ -67,45 +69,43 @@ extension HomeViewController : UICollectionViewDataSource,UICollectionViewDelega
             return searchPhotos.count
         }
         else {
-        return photos.count
+            return photos.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+        
         let linkToImage = baseURl + photos[indexPath.row].img
+        
         if let cell = mutiMediaCollectionView.dequeueReusableCell(withReuseIdentifier: "MultimediaCollectionCell", for: indexPath) as? MultimediaCollectionCell {
-                 nameArray.append(photos[indexPath.row].localized_name)
+            nameArray.append(photos[indexPath.row].localized_name)
             if searching {
                 cell.profileName.text = searchPhotos[indexPath.row]
             }
             else {
                 cell.profileName.text = photos[indexPath.row].localized_name.capitalized
             }
-//            cell.profileName.text = photos[indexPath.row].localized_name.capitalized
-       
             cell.VideoPhotoImage.contentMode = .scaleAspectFill
             cell.VideoPhotoImage.downloaded(from: linkToImage)
+            imageLink = linkToImage
             cell.layoutIfNeeded()
             return cell
-        
+            
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         let linkToImage = baseURl + photos[indexPath.row].img
-         if let photoDetailScreen = UIViewController.controller(forURLType: URLType.photoDetailPage.rawValue, title: nil, data: nil, otherInfo: nil)as? PhotoDetailViewController{
+        if let photoDetailScreen = UIViewController.controller(forURLType: URLType.photoDetailPage.rawValue, title: nil, data: nil, otherInfo: nil)as? PhotoDetailViewController{
             photoDetailScreen.photoName = photos[indexPath.row].localized_name
-                   navigationController?.pushViewController(photoDetailScreen, animated: true)
-               }
+            photoDetailScreen.imageLink = imageLink
+            navigationController?.pushViewController(photoDetailScreen, animated: true)
+        }
     }
     internal func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath)-> CGSize {
-  
+        
         return CGSize(width: view.frame.width, height: view.frame.height/3)
     }
-    
-    
 }
 
 extension HomeViewController: UISearchBarDelegate {

@@ -11,7 +11,7 @@ import UIKit
 
 /// All the controllers with NavigationTitleView and navigation bar should be derived from this class
 class NavigationBaseViewController: BaseViewController {
-
+    
     // A view needs to be added at the top in place of navigation bar and connected to this outet.
     
     @IBOutlet weak var navigationContainerView: UIView!

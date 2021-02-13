@@ -61,9 +61,9 @@
 		E71DCD7325D6CBFD00955ACB /* UIStoryboard+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Additions.swift"; sourceTree = "<group>"; };
 		E71DCD7525D6CD6500955ACB /* ControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerExtension.swift; sourceTree = "<group>"; };
 		E71DCD7B25D6D18600955ACB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E75996FF25D79AF600587FB6 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		E75996FF25D79AF600587FB6 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuBar.swift; path = ../MenuBar.swift; sourceTree = "<group>"; };
 		E759970125D79C6200587FB6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		E759970325D79D5D00587FB6 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		E759970325D79D5D00587FB6 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCell.swift; path = ../VideoCell.swift; sourceTree = "<group>"; };
 		E759970525D7B33B00587FB6 /* MultimediaCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultimediaCollectionCell.xib; sourceTree = "<group>"; };
 		E759970725D7B35B00587FB6 /* MultimediaCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultimediaCollectionCell.swift; sourceTree = "<group>"; };
 		E759970E25D7C58500587FB6 /* PhotoDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetail.storyboard; sourceTree = "<group>"; };
@@ -163,8 +163,7 @@
 		E75996FE25D7914900587FB6 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				E759970325D79D5D00587FB6 /* VideoCell.swift */,
-				E75996FF25D79AF600587FB6 /* MenuBar.swift */,
+				E759971925D80E0000587FB6 /* View */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -216,6 +215,15 @@
 				E759971525D7E68000587FB6 /* ServiceManger.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E759971925D80E0000587FB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E75996FF25D79AF600587FB6 /* MenuBar.swift */,
+				E759970325D79D5D00587FB6 /* VideoCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E76DB38E25D51D020086B9B1 = {
@@ -713,7 +721,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Robosoft.GoogleSignInSample.Evaluation2021;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Robosoft.Evaluation2021;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -731,7 +739,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Robosoft.GoogleSignInSample.Evaluation2021;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Robosoft.Evaluation2021;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
