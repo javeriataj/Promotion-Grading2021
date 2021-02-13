@@ -48,25 +48,6 @@
                                 <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Neg-KW-T1e">
-                                <rect key="frame" x="20" y="304" width="374" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="teg-Ad-bhn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMP-DF-vrj">
-                                <rect key="frame" x="30" y="313" width="18" height="22"/>
-                                <state key="normal" image="Search Icon"/>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search photos, videos, artists" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rle-aF-bk4">
-                                <rect key="frame" x="87" y="313" width="192.5" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UWd-dI-efA">
                                 <rect key="frame" x="0.0" y="401" width="414" height="461"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,39 +63,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="QBe-su-uh8"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nwx-bn-A9o">
+                                <rect key="frame" x="20" y="296" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zDI-ih-z2r"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NOI-gB-shr"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="o5A-Fv-jah" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Au-4w-3Zo"/>
                             <constraint firstItem="XH6-LX-Jlf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="5uz-Bw-dwJ"/>
-                            <constraint firstItem="TMP-DF-vrj" firstAttribute="centerY" secondItem="Neg-KW-T1e" secondAttribute="centerY" id="6VX-SH-GCI"/>
-                            <constraint firstItem="TMP-DF-vrj" firstAttribute="leading" secondItem="Neg-KW-T1e" secondAttribute="leading" constant="10" id="7Kx-3k-vGB"/>
-                            <constraint firstItem="rle-aF-bk4" firstAttribute="leading" secondItem="TMP-DF-vrj" secondAttribute="trailing" constant="39" id="7xL-Qw-RhM"/>
                             <constraint firstItem="zeS-mN-Bz5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9Ho-LU-Fwt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lgg-ce-GSb" secondAttribute="trailing" constant="30" id="AVo-Yx-5Ky"/>
-                            <constraint firstItem="Neg-KW-T1e" firstAttribute="top" secondItem="zeS-mN-Bz5" secondAttribute="bottom" constant="20" id="Dmb-eb-qTK"/>
                             <constraint firstItem="zeS-mN-Bz5" firstAttribute="top" secondItem="Lgg-ce-GSb" secondAttribute="bottom" constant="15" id="Dz4-VK-XLu"/>
-                            <constraint firstItem="rle-aF-bk4" firstAttribute="height" secondItem="TMP-DF-vrj" secondAttribute="height" id="Ja0-5z-8LP"/>
                             <constraint firstItem="Lgg-ce-GSb" firstAttribute="top" secondItem="XH6-LX-Jlf" secondAttribute="bottom" constant="10" id="MH8-vE-LoQ"/>
                             <constraint firstItem="UWd-dI-efA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ml7-Bl-pH1"/>
                             <constraint firstItem="XH6-LX-Jlf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="P5d-dz-R6c"/>
                             <constraint firstItem="UWd-dI-efA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q9A-on-sMx"/>
-                            <constraint firstItem="rle-aF-bk4" firstAttribute="centerY" secondItem="TMP-DF-vrj" secondAttribute="centerY" id="Qe7-9I-e0S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Neg-KW-T1e" secondAttribute="trailing" constant="20" id="VoK-vv-gsA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XH6-LX-Jlf" secondAttribute="trailing" constant="30" id="Zo3-gb-bs3"/>
                             <constraint firstItem="UWd-dI-efA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zrv-Tq-ALy"/>
+                            <constraint firstItem="nwx-bn-A9o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bDY-HW-BdM"/>
                             <constraint firstItem="o5A-Fv-jah" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bjv-8H-KCU"/>
                             <constraint firstItem="Lgg-ce-GSb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fRf-2K-dRz"/>
-                            <constraint firstItem="Neg-KW-T1e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hse-8T-wmC"/>
                             <constraint firstItem="UWd-dI-efA" firstAttribute="top" secondItem="o5A-Fv-jah" secondAttribute="bottom" constant="51" id="li0-su-xU0"/>
+                            <constraint firstItem="nwx-bn-A9o" firstAttribute="top" secondItem="o5A-Fv-jah" secondAttribute="bottom" constant="-54" id="nUk-j2-J9t"/>
                             <constraint firstItem="o5A-Fv-jah" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xZF-Mm-Ml4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zeS-mN-Bz5" secondAttribute="trailing" constant="30" id="y1b-bw-8Vg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nwx-bn-A9o" secondAttribute="trailing" constant="20" id="zla-uI-02i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="x42-Uc-H6n"/>
                     <connections>
                         <outlet property="mutiMediaCollectionView" destination="UWd-dI-efA" id="Ao2-CP-Q9j"/>
+                        <outlet property="searchBar" destination="nwx-bn-A9o" id="xza-J9-aKw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -142,6 +129,5 @@
     </scenes>
     <resources>
         <image name="Bannerimage" width="360" height="326"/>
-        <image name="Search Icon" width="18" height="18"/>
     </resources>
 </document>

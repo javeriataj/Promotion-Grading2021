@@ -8,14 +8,16 @@
 
 import UIKit
 import Foundation
-import AlamofireImage
 
 class HomeViewController: NavigationBaseViewController   {
     
     var photos = [PhotosModel]()
-    var profileNames = ["Javeria","Taj","Bijly"]
     var baseURl = "https://api.opendota.com"
-    //var photos = [""]
+    var nameArray = [String]()
+    var searchPhotos = [String]()
+    var searching = false
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mutiMediaCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -61,13 +63,27 @@ class HomeViewController: NavigationBaseViewController   {
 
 extension HomeViewController : UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if searching {
+            return searchPhotos.count
+        }
+        else {
         return photos.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
         let linkToImage = baseURl + photos[indexPath.row].img
         if let cell = mutiMediaCollectionView.dequeueReusableCell(withReuseIdentifier: "MultimediaCollectionCell", for: indexPath) as? MultimediaCollectionCell {
-            cell.profileName.text = photos[indexPath.row].localized_name.capitalized
+                 nameArray.append(photos[indexPath.row].localized_name)
+            if searching {
+                cell.profileName.text = searchPhotos[indexPath.row]
+            }
+            else {
+                cell.profileName.text = photos[indexPath.row].localized_name.capitalized
+            }
+//            cell.profileName.text = photos[indexPath.row].localized_name.capitalized
+       
             cell.VideoPhotoImage.contentMode = .scaleAspectFill
             cell.VideoPhotoImage.downloaded(from: linkToImage)
             cell.layoutIfNeeded()
@@ -90,5 +106,13 @@ extension HomeViewController : UICollectionViewDataSource,UICollectionViewDelega
     }
     
     
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchPhotos = nameArray.filter({$0.prefix(searchText.count) == searchText})
+        searching = true
+        mutiMediaCollectionView.reloadData()
+    }
 }
 
