@@ -1,25 +1,14 @@
 //
 //  UIFont+Additions.swift
-//  Kassara
+//  Evaluation2021
 //
-//  Created by Vidyalaxmi V Shenoy on 23/08/17.
-//  Copyright © 2017 I12wrk.com, Written under contract by Robosoft Technologies Pvt. Ltd. All rights reserved.
-//
+//  Created by Javeria Taj on 13/02/21.
+//  Copyright © 2021 Robosoft. All rights reserved.
+
 
 import UIKit
 
 extension UIFont {
-//    static func RobotoCondensedLight(size: CGFloat) -> UIFont? {
-//        return UIFont(name: "RobotoCondensed-Light", size: size)
-//    }
-//
-//    static func RobotoCondensedBold(size: CGFloat) -> UIFont? {
-//        return UIFont(name: "RobotoCondensed-Bold", size: size)
-//    }
-//
-//    static func RobotoCondensedRegular(size: CGFloat) -> UIFont? {
-//        return UIFont(name: "RobotoCondensed-Regular", size: size)
-//    }
     
     static func RobotoRegular(size : CGFloat) -> UIFont? {
         return UIFont(name: "Roboto-Regular", size: size)

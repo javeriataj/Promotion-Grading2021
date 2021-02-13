@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Evaluation2021
 //
-//  Created by Javeria Taj on 11/02/21.
+//  Created by Javeria Taj on 13/02/21.
 //  Copyright © 2021 Robosoft. All rights reserved.
 //
 
@@ -11,18 +11,10 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-var window: UIWindow?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-
-        let storyboard = UIStoryboard(name: "Home", bundle: nil)
-
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
-
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
         return true
     }
 
