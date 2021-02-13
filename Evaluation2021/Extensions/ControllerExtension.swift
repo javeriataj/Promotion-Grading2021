@@ -11,6 +11,7 @@ import UIKit
 
 enum URLType: String {
     case homePage
+    case photoDetailPage
 
     
    
@@ -22,6 +23,8 @@ enum URLType: String {
         case .homePage:
             classIdentifier = HomeViewController.self
  
+        case .photoDetailPage:
+            classIdentifier = PhotoDetailViewController.self
         }
         
         return classIdentifier

@@ -21,13 +21,10 @@ class MultimediaCollectionCell : UICollectionViewCell {
     @IBOutlet weak var profileName: UILabel!
     
     override func awakeFromNib() {
-        favouriteButtonToggle()
         super.awakeFromNib()
     }
     
-    func favouriteButtonToggle(){
-  
-    }
+   
     @IBAction func didTapFavourite(_ sender: Any) {
         favouriteButton.isSelected = !favouriteButton.isSelected
     }
